@@ -11,7 +11,7 @@ class CheckRole
     public function handle(Request $request, Closure $next, $role)
     {
         if (!Auth::check() || Auth::user()->role !== $role) {
-            return redirect('/');
+            return redirect('/'); // Redirige vers la page d'accueil si le rôle ne correspond pas
         }
         return $next($request);
     }
