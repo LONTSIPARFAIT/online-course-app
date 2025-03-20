@@ -45,3 +45,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
         return view('welcome');
     });
 });
+
+Route::get('/test', function () {
+    return "Test OK";
+})->middleware('role:student');
